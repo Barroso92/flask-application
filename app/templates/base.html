@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>myCRYPTO</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <style>
+        .footer {
+           position: fixed;
+           left: 0;
+           bottom: 0;
+           width: 100%;
+           background-color: grey;
+           color: white;
+           text-align: center;
+        }
+    </style>
+  <script>
+    function submitForm() {
+    // Get form data by their IDs
+    const from = document.getElementById("from").value;
+    const q1 = document.getElementById("q1").value;
+    const to = document.getElementById("to").value;
+    const q2 = document.getElementById("q2").value;
+    const pu = document.getElementById("pu").value;
+    const formData = {
+        from: from,
+        q1: q1,
+        to: to,
+        q2: q2,
+        pu: pu
+    };
+
+    // Send the form data to the Flask backend using AJAX
+    fetch("/submit-form", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify(formData),
+    })
+    .then(response => response.json())
+    .then(data => {
+        console.log(data); // You can handle the response data here
+    })
+    .catch(error => {
+        console.error("Error:", error);
+    });
+}
+  </script>
+</head>
+<body>
+
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="/">myCRYPTO</a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li class="active"><a href="/">Home</a></li>
+      <li><a href="/purchase">Purchase</a></li>
+      <li><a href="/status">Status</a></li>
+    </ul>
+  </div>
+</nav>
+
+{% block content %}{% endblock %}
+
+
+<div class="footer">
+  <p>2020 - Todos Los derechos reservados</p>
+</div>
+
+</body>
+</html>

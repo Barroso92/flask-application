@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h2>ESTADO DE LA INVERSION</h2>
+<div class="container">
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th>Moneda</th>
+        <th>Cantidad</th>
+        <th>Valor en Euors</th>
+      </tr>
+    </thead>
+    <tbody>
+
+        <tr>
+          <td>{{distinct_values}}</td>
+          <td>{{sum_of_distinct_values}}</td>
+          <td>{{sum_of_distinct_values_two}}</td>
+        </tr>
+
+
+    </tbody>
+  </table>
+
+  <h4>Valor Actual: {{sum_of_distinct_values}}</h4>
+  <h4>Precio de Compra: {{sum_of_distinct_values_two}}</h4>
+  <h4>Resultado de la Inversion: {{Inversion}}</h4>
+</div>
+
+
+{% endblock %}

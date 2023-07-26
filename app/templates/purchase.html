@@ -1,0 +1,63 @@
+{% extends "base.html" %}
+{% block content %}
+<br>
+<h2>COMPRA DE CRIPTOS</h2>
+<div class="container">
+  <div class="row">
+          <div class="col-md-6">
+              <label for="from">From:</label>
+                <select name="from" id="from" class="form-control">
+                  <option value="eur">EUR</option>
+                  <option value="eth">ETH</option>
+                  <option value="bnb">BNB</option>
+                  <option value="thereis">THERE IS</option>
+                  <option value="dot">DOT</option>
+                  <option value="btc">BTC</option>
+                  <option value="usdt">USDT</option>
+                  <option value="xrp">XRP</option>
+                  <option value="sun">SUN</option>
+                  <option value="matic">MATIC</option>
+                </select>
+
+                <br>
+                <div class="form-group">
+                  <label for="q1">Q:</label>
+                  <input type="text" class="form-control" id="q1" name="q1">
+                </div>
+          </div>
+          <div class="col-md-6">
+              <label for="to">To:</label>
+                <select name="to" id="to" class="form-control">
+                  <option value="eur">EUR</option>
+                  <option value="eth">ETH</option>
+                  <option value="bnb">BNB</option>
+                  <option value="thereis">THERE IS</option>
+                  <option value="dot">DOT</option>
+                  <option value="btc">BTC</option>
+                  <option value="usdt">USDT</option>
+                  <option value="xrp">XRP</option>
+                  <option value="sun">SUN</option>
+                  <option value="matic">MATIC</option>
+                </select>
+
+            <br>
+              <div class="form-group">
+                <label for="q2">Q:</label>
+                <input type="text" class="form-control" id="q2" name="q2">
+              </div>
+            <br>
+              <div class="form-group">
+                <label for="pu">PU:</label>
+                <input type="text" class="form-control" id="pu" name="pu">
+              </div>
+
+            <br>
+
+            <button class="btn btn-success" id="submitButton" onclick="submitForm(event)"> Submit </button>
+          </div>
+    <script src="script.js"></script>
+  </div>
+</div>
+
+
+{% endblock %}
